@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>TheSloiks</title>
+        <style>
+            table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            }
+        </style>
+    </head>
+    <body>
+        {% if transactions_list %}
+        <h1 style="text">Requsted Transactions:</h1>
+            <table style="width:100%; text-align:center">
+                <tr>
+                    <th>Date created</th>
+                    <th>Type</th>
+                    <th>Currency</th>
+                    <th>Value</th>
+                    <th>Title</th>
+                    <th>From Jar</th>
+                    <th>To Jar</th>
+                </tr>
+                {% for transaction in transactions_list %}
+                <tr>
+                    <td>{{ transaction.date_created }}</td>
+                    <td>{{ transaction.type }}</td>
+                    <td>{{ transaction.currency }}</td>
+                    <td>{{ transaction.value }}</td>
+                    <td>{{ transaction.title }}</td>
+                    <td>{% if transaction.source_jar_id %}{{ transaction.source_jar_id }}{% else %}-{% endif %}</td>
+                    <td>{% if transaction.target_jar_id %}{{ transaction.target_jar_id }}{% else %}-{% endif %}</td>
+                </tr>
+                {% endfor %}
+           </table>
+        {% else %}
+            <p>There are no transactions for that request.</p>
+        {% endif %}
+    </body>
+</html>
