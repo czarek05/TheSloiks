@@ -3,7 +3,7 @@
 Manage budget with TheSloiks.
 
 ## Install the app with Docker on Linux (tested on Ubuntu 18.04)
-sudo is required. Run script `provision_first.sh`. When the script is finished and the app is running, open new terminal and run script `provision_two.sh`. Check if tests passed. The app should be available at http://0.0.0.0:8000/thesloiks/
+sudo is required. cd to the directory containing script `provision_first.sh`. Run script `provision_first.sh`. When the script is finished and the app is running, open new terminal, cd to the directory containing script `provision_second.sh` and run script `provision_second.sh`. Check if tests passed. The app should be available at http://0.0.0.0:8000/thesloiks/
 
 
 If the app was already installed and is turned off, it can be started with:
