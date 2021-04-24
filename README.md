@@ -20,7 +20,7 @@ Get list of all jars.
 
 Get jar with id 1.
 
-### POST /thesloiks/jar
+### POST /thesloiks/jar/
 
 Post new jar. It is required to send JSON body with exactly one field: currency. Possible values: PLN, USD, EUR.
 
@@ -32,25 +32,25 @@ Get all transactions.
 
 Get all transactions where the source jar is equal 11 or 77, or the target jar is equal 11 or 77 sorted by value ascending. Proper values for sortBy: date_created, value, type, title, currency. Proper values for sortOrder: asc, desc. Proper values for jarsIds - comma separated numbers.
 
-### POST /thesloiks/transaction
+### POST /thesloiks/transaction/
 
 Post new transaction. It is required to send JSON body. The request must contain fields: value (non-zero, positive number, two decimal places, less than all money in the world in PLN) and currency (PLN, USD, EUR). The request must contain at least one from fields: targetJar, sourceJar (integers, ids of jars). The request also may contain field title (text, up to 250 chars). The request must not contain other fields. If sourceJar and targetJar are provided, it means that it is a transfer. If only sourceJar is provided, it means that it is a withdraw. If only targetJar is provided, it means that it is deposit.
 
 ## More examples
 
-### POST /thesloiks/transaction
+### POST /thesloiks/transaction/
 
 JSON: {"targetJar": 1, "value": 100, "currency": "PLN"}
 
 Deposit 100 PLN in jar with id 1 (the jar must exists and has currency equal to request currency).
 
-### POST /thesloiks/transaction
+### POST /thesloiks/transaction/
 
 JSON: {"sourceJar": 1, "value": 100, "currency": "PLN"}
 
 Withdraw 100 PLN from jar with id 1 (the jar must exists, has currency equal to request currency, has balance not less than 100).
 
-### POST /thesloiks/transaction
+### POST /thesloiks/transaction/
 
 JSON: {"sourceJar": 2, "targetJar": 1, "value": 100, "currency": "PLN"}
 
