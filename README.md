@@ -46,7 +46,7 @@ Deposit 100 PLN in jar with id 1 (the jar must exists and has currency equal to 
 
 ### POST /thesloiks/transaction
 
-JSON: {"targetJar": 1, "value": 100, "currency": "PLN"}
+JSON: {"sourceJar": 1, "value": 100, "currency": "PLN"}
 
 Withdraw 100 PLN from jar with id 1 (the jar must exists, has currency equal to request currency, has balance not less than 100).
 
